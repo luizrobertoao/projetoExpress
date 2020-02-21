@@ -9,6 +9,17 @@ app.get('/contatos', (req, res) => res.send({nome: 'Luiz', idade: 22}));
 
 // Rotas parametrizadas
 
+
+// Teste exercício - rota parametrizada - mostrar
+var series = [{nome: 'um', temp: 3}, {nome: 'dois', temp: 1}, {nome: 'tres', temp: 4}];
+
+app.get('/serie/:id', (req, res) => {
+    let {id} = req.params;
+    // usando desestruturação let {id} = req.params;
+    console.log(series[id]);
+    res.send(series[id]);
+});
+
 app.get('/produtos/:id', (req, res) => {
     let id = req.params.id;
     // usando desestruturação let {id} = req.params;
